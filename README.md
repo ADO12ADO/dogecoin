@@ -1,7 +1,7 @@
 <h1 align="center">
 <img src="https://static.tumblr.com/ppdj5y9/Ae9mxmxtp/300coin.png" alt="Nicoin" width="300"/>
 <br/><br/>
-Nicoin Core [NI, Ð]  
+Nicoin Core [NI, Ń]  
 </h1>
 
 <div align="center">
