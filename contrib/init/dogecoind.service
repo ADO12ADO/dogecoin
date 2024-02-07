@@ -2,17 +2,17 @@
 #
 # The relevant paths are:
 #
-#/usr/bin/dogecoind
-#/etc/dogecoin/
-#/var/lib/dogecoin/
+#/usr/bin/nicoind
+#/etc/nicoin/
+#/var/lib/nicoin/
 
 [Unit]
-Description=Dogecoin's distributed currency daemon
+Description=Nicoin's distributed currency daemon
 After=network.target
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/dogecoind -conf=/etc/dogecoin/dogecoin.conf -datadir=/var/lib/dogecoin
+ExecStart=/usr/bin/nicoind -conf=/etc/nicoin/nicoin.conf -datadir=/var/lib/nicoin
 
 KillSignal=SIGINT
 Restart=always
@@ -22,8 +22,8 @@ TimeoutStartSec=5
 StartLimitIntervalSec=120
 StartLimitBurst=5
 
-User=dogecoin
-Group=dogecoin
+User=nicoin
+Group=nicoin
 
 ### Restrict resource consumption
 MemoryAccounting=yes
@@ -40,8 +40,8 @@ TemporaryFileSystem=/:ro
 BindReadOnlyPaths=/etc/ /lib/ /lib64/
 
 # Add daemon paths
-BindReadOnlyPaths=/usr/bin/dogecoind /etc/dogecoin/
-BindPaths=/var/lib/dogecoin
+BindReadOnlyPaths=/usr/bin/nicoind /etc/nicoin/
+BindPaths=/var/lib/nicoin
 
 ### Restrict access to system.
 

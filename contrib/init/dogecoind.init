@@ -1,36 +1,36 @@
 #!/bin/bash
 #
-#  dogecoind The dogecoin core server.
+#  nicoind The nicoin core server.
 #
 #
 # chkconfig: 345 80 20
-# description: dogecoind
-# processname: dogecoind
+# description: nicoind
+# processname: nicoind
 #
 
 # Source function library.
 . /etc/init.d/functions
 
-# you can override defaults in /etc/sysconfig/dogecoind, see below
-if [ -f /etc/sysconfig/dogecoind ]; then
-        . /etc/sysconfig/dogecoind
+# you can override defaults in /etc/sysconfig/nicoind, see below
+if [ -f /etc/sysconfig/nicoind ]; then
+        . /etc/sysconfig/nicoind
 fi
 
 RETVAL=0
 
-prog=dogecoind
-# you can override the lockfile via DOGECOIND_LOCKFILE in /etc/sysconfig/dogecoind
-lockfile=${DOGECOIND_LOCKFILE-/var/lock/subsys/dogecoind}
+prog=nicoind
+# you can override the lockfile via NICOIND_LOCKFILE in /etc/sysconfig/nicoind
+lockfile=${NICOIND_LOCKFILE-/var/lock/subsys/nicoind}
 
-# dogecoind defaults to /usr/bin/dogecoind, override with DOGECOIND_BIN
-dogecoind=${DOGECOIND_BIN-/usr/bin/dogecoind}
+# nicoind defaults to /usr/bin/nicoind, override with NICOIND_BIN
+nicoind=${NICOIND_BIN-/usr/bin/nicoind}
 
-# dogecoind opts default to -disablewallet, override with DOGECOIND_OPTS
-dogecoind_opts=${DOGECOIND_OPTS--disablewallet}
+# nicoind opts default to -disablewallet, override with NICOIND_OPTS
+nicoind_opts=${NICOIND_OPTS--disablewallet}
 
 start() {
     echo -n $"Starting $prog: "
-    daemon $DAEMONOPTS $dogecoind $dogecoind_opts
+    daemon $DAEMONOPTS $nicoind $nicoind_opts
     RETVAL=$?
     echo
     [ $RETVAL -eq 0 ] && touch $lockfile
